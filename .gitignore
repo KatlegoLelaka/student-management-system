@@ -1,0 +1,22 @@
+# Visual Studio build output
+Debug/
+Release/
+x64/
+x86/
+.vs/
+*.user
+*.suo
+*.aps
+*.ncb
+*.sdf
+*.opensdf
+ipch/
+*.ilk
+*.pdb
+*.idb
+
+# Compiled binaries
+*.exe
+*.obj
+*.lib
+*.dll
