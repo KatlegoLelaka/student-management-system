@@ -20,3 +20,7 @@ ipch/
 *.obj
 *.lib
 *.dll
+
+*.slnx
+*.vcxproj
+*.vcxproj.filters
