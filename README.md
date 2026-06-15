@@ -1,77 +1,80 @@
-# Big Heading
-## Medium Heading
-**bold text**
-`inline code`
-````code block```
-- bullet point
-````
+# CAPS Student Management System
 
-**What your README should contain:**
+> **Status: On Hold** — Development paused. Project planning and database design complete.
 
-Here's a template you can copy directly and fill in over time:
+## Overview
 
-````markdown
-# Student Management System
+The CAPS Student Management System is a student project built to address a real-world problem — providing underdeveloped schools with a simple, lightweight, and offline-capable system to manage student records. The system is designed with low dependencies in mind, making it suitable for environments with limited infrastructure and unreliable internet access.
 
-A C++ and MySQL-based student management system built as a personal 
-project to manage student records, teacher access, and academic marks.
+The system is currently planned as a CLI (Command Line Interface) tool, with the long-term goal of evolving into a full desktop application.
 
-## Features
-- Add and manage student records
-- Teacher-controlled mark entry and updates
-- Role-based login (Admin / Teacher)
-- Multi-school support
+## Purpose
 
-## Technologies Used
-- C++ (Vanilla)
-- MySQL
-- mysql-connector-c++
+To create a system for underdeveloped schools to easily store student records and allow students and teachers to securely access academic information, materials, and notifications — without requiring an internet connection.
 
-## Getting Started
+## Users
 
-### Prerequisites
-- g++ compiler
-- MySQL Server
-- mysql-connector-c++ library
+The system supports four user roles:
 
-### Installation
-1. Clone the repository
-```bash
-   git clone https://github.com/your-username/student-management-system.git
+- **Student** — View grades, materials and notifications
+- **Teacher** — Manage student grades, attendance, materials and class notifications
+- **Admin** — Manage student and teacher accounts
+- **SuperAdmin** — Full system access and admin oversight
+
+## Planned Features
+
+### System 1 (Core)
+- Role-based login for all user types
+- Student record management
+- Grade setting and controlled grade release
+- Attendance tracking per class
+- Admin account management with permission-based access control
+
+### System 2 (Extended)
+- Homework and material uploads by teachers
+- In-app notifications to students (no internet required)
+- Student access to learning materials
+
+## Technology Stack
+
+- **Language:** C++
+- **Database:** SQLite3
+- **Interface:** CLI (Command Line Interface)
+- **Version Control:** Git & GitHub
+
+## Database Design
+
+A full relational database schema has been designed and documented, covering the following tables:
+
+`users` `students` `teachers` `classes` `subjects` `marks` `attendance` `materials` `notifications` `notifications_checked` `student_classes`
+
+The schema includes check constraints for data integrity, role-based access control, and junction tables for many-to-many relationships.
+
+## Project Structure
+
 ```
-2. Set up the database by running the SQL schema:
-```bash
-   mysql -u root -p < schema.sql
-```
-3. Compile the project:
-```bash
-   g++ main.cpp -o sms -lmysqlcppconn
-```
-4. Run the program:
-```bash
-   ./sms
+student-management-system/
+├── StudentManagementSystem/
+│   ├── SQLite/
+│   │   └── Student_Management_System.sql
+│   └── main.cpp
+├── .gitignore
+├── LICENSE
+└── README.md
 ```
 
-## Project Status
-🚧 In active development — see the roadmap below.
+## Current Progress
 
-## Roadmap
-- [x] Project design and ERD
-- [ ] Database schema
-- [ ] Student CRUD operations
-- [ ] Mark management
-- [ ] Login system
+- [x] System purpose defined
+- [x] User roles and use cases documented
+- [x] Full database schema designed
+- [x] SQL schema exported and committed
+- [ ] Database initialisation in C++
+- [ ] User authentication
+- [ ] Student portal
+- [ ] Teacher portal
+- [ ] Admin portal
 
 ## Author
-Katlego Lelaka — BSc Computer Science, University of the Witwatersrand
-````
 
-You don't need to fill everything in on day one. Start with just the title, a one-sentence description, and the Technologies section. Update it as you build.
-
----
-
-## Where to Learn Markdown Properly
-
-It takes about 20 minutes to learn everything you'll ever need. The best resource is [markdownguide.org/basic-syntax](https://www.markdownguide.org/basic-syntax/) — it's simple, visual, and free. GitHub also has a live preview when you edit your README directly on the site, so you can see exactly how it renders as you type.
-
-The most important thing: **create the repo today or tomorrow after your IS test.** Even an empty repo with just a title in the README is a legitimate first commit and the hardest part is always starting.
+Developed by **Katlego Lelaka** as part of a personal learning project to build real-world software development skills in C++ and SQLite.
